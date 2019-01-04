@@ -161,11 +161,12 @@ void luatchoivahienthi()
                 }
         
     }
-    			if(dem>=9)
+    			if(dem>=8)
     			{
        		 	a=' ',b=' ',c=' ',d=' ',e=' ',f=' ',g=' ',h=' ',i=' ';
     			cout << "Hoa !" << endl;
    				cout<<"ban co muon choi lai : \nNhap so '1' de choi lai\nNhap so '0' de ket thuc\n";cin>>k;
+   				system("cls");
 				if(k==1) 
 				{
 				nhap(); luatchoivahienthi();
