@@ -22,8 +22,10 @@ void nhap()
 	}else
 	if(a==3)
 	{
-	 cout<<"bye!!!"<<endl;	
-	}else 
+		cout<<"-------------------------BYE-------------------------";
+		exit(0);
+	}
+	else 
 	{
 	cout<<"Nhap sai "<<endl; nhap();
 	}
@@ -32,7 +34,7 @@ void nhap()
 void luatchoivahienthi()
 {
 	
-    cout << "			 ___________________" << endl;
+	cout << "			 ___________________" << endl;
     cout << "			 | (1) | (2) | (3) |" << endl;
     cout << "			 |_____|_____|_____|" << endl;
     cout << "			 | (4) | (5) | (6) |" << endl;
@@ -136,9 +138,11 @@ void luatchoivahienthi()
                 cout << "   "<<"X"<<" THANG!!! " << endl;
                	a=' ',b=' ',c=' ',d=' ',e=' ',f=' ',g=' ',h=' ',i=' ';
             	cout<<"ban co muon choi lai : \nNhap so '1' de choi lai\nNhap so '0' de ket thuc\n";cin>>k;
+            	system("cls");
 				if(k==1) 
 				{
-				nhap(); luatchoivahienthi();
+				nhap();
+				luatchoivahienthi();
 				}
 				else cout<<"-------------------------------------KET THUC TRO CHOI-----------------------------------"<<endl; break; 
                 }
@@ -148,7 +152,8 @@ void luatchoivahienthi()
                 cout << "   "<<"O"<<" THANG!!! " << endl;
                 a=' ',b=' ',c=' ',d=' ',e=' ',f=' ',g=' ',h=' ',i=' ';
                 cout<<"ban co muon choi lai : \nNhap so '1' de choi lai\nNhap so '0' de ket thuc\n";cin>>k;
-				if(k==1) 
+                system("cls");
+                if(k==1) 
 				{
 				nhap(); luatchoivahienthi();
 				}
@@ -176,10 +181,6 @@ void luatchoivahienthi()
 int main()
 {
 	nhap();
-	if(a==3)
-	{
-		return 0;
-	}
 	luatchoivahienthi();
 	system("pause");
 }
