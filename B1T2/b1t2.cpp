@@ -32,7 +32,7 @@ void nhap()
 void luatchoivahienthi()
 {
 	
-	cout << "			 ___________________" << endl;
+    cout << "			 ___________________" << endl;
     cout << "			 | (1) | (2) | (3) |" << endl;
     cout << "			 |_____|_____|_____|" << endl;
     cout << "			 | (4) | (5) | (6) |" << endl;
