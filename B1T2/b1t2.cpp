@@ -32,13 +32,13 @@ void nhap()
 void luatchoivahienthi()
 {
 	
-	cout << " ___________________" << endl;
-    cout << " | (1) | (2) | (3) |" << endl;
-    cout << " |_____|_____|_____|" << endl;
-    cout << " | (4) | (5) | (6) |" << endl;
-    cout << " |_____|_____|_____|" << endl;
-    cout << " | (7) | (8) | (9) |" << endl;
-    cout << " |_____|_____|_____|" << endl;
+	cout << "			 ___________________" << endl;
+    cout << "			 | (1) | (2) | (3) |" << endl;
+    cout << "			 |_____|_____|_____|" << endl;
+    cout << "			 | (4) | (5) | (6) |" << endl;
+    cout << "			 |_____|_____|_____|" << endl;
+    cout << "			 | (7) | (8) | (9) |" << endl;
+    cout << "			 |_____|_____|_____|" << endl;
     cout << endl;
     cout << endl;
 	int k;
@@ -55,23 +55,23 @@ void luatchoivahienthi()
 		if(plr1%2==0)
 		{
 			if ( k % 2 == 0) {
-            cout << "luot cua : "<<plr2<< endl;
+         //   cout << "			luot cua : "<<plr2<< endl;
             xo = 'X';
         }
         else {
-            cout << "luot cua : "<<plr1 << endl;
+           // cout << "			luot cua : "<<plr1 << endl;
             xo = 'O';
         }
 		}else
         if ( k % 2 == 0) {
-            cout << "luot cua : "<<plr2<< endl;
+           // cout << "			luot cua : "<<plr2<< endl;
             xo = 'O';
         }
         else {
-            cout << "luot cua : "<<plr1 << endl;
+           // cout << "			luot cua : "<<plr1 << endl;
             xo = 'X';
         }
-        cout << "Nhap so de danh vi tri : " << endl;
+        cout << "			Your turn : " ;
         cin >> choice;
         switch (choice) {
                 case 1:
@@ -101,58 +101,58 @@ void luatchoivahienthi()
                 case 9:
                     i=xo;
                     break;
+				case 0:
+					cout<<"-------------------------------------KET THUC TRO CHOI-----------------------------------"<<	endl;
+					break;	   
                 default:
                     cout << "Nhap sai so !" << endl;
                     
         }
+        if (choice==0) 
+        {
+        	break;
+		}
         system("cls");
         cout << "------MENU------" << endl;   
     	cout << "1.PLAY WITH X" << endl;
      	cout << "2.PLAY WITH O" << endl;
+     	cout << "0.TO END NOW"<<endl;
 
-        cout << " ___________________" << endl;
-        cout << " |  "<<a<<"  |  "<<b<<"  |  "<<c<<"  |" << endl;
-        cout << " |_____|_____|_____|" << endl;
-        cout << " |  "<<d<<"  |  "<<e<<"  |  "<<f<<"  |" << endl;
-        cout << " |_____|_____|_____|" << endl;
-        cout << " |  "<<g<<"  |  "<<h<<"  |  "<<i<<"  |" << endl;
-        cout << " |_____|_____|_____|" << endl;
+        cout << "			 ___________________" << endl;
+        cout << "			 |  "<<a<<"  |  "<<b<<"  |  "<<c<<"  |" << endl;
+        cout << "			 |_____|_____|_____|" << endl;
+        cout << "			 |  "<<d<<"  |  "<<e<<"  |  "<<f<<"  |" << endl;
+        cout << "			 |_____|_____|_____|" << endl;
+        cout << "			 |  "<<g<<"  |  "<<h<<"  |  "<<i<<"  |" << endl;
+        cout << "			 |_____|_____|_____|" << endl;
         cout << endl;
         cout << endl;
         
-		cout << " ___________________" << endl;
-   		cout << " | (1) | (2) | (3) |" << endl;
-    	cout << " |_____|_____|_____|" << endl;
-    	cout << " | (4) | (5) | (6) |" << endl;
-    	cout << " |_____|_____|_____|" << endl;
-    	cout << " | (7) | (8) | (9) |" << endl;
-    	cout << " |_____|_____|_____|" << endl;
-   		cout << endl;
-    	cout << endl;
+	
 
         if ( a == 'X' && b == 'X' && c == 'X' || d == 'X' && e == 'X' && f == 'X' || g == 'X' && h == 'X' && i == 'X' ||
              a == 'X' && d == 'X' && g == 'X' || b == 'X' && e == 'X' && h == 'X' || c == 'X' && f == 'X' && i == 'X' ||
              a == 'X' && e == 'X' && i == 'X' || g == 'X' && e == 'X' && c == 'X' ) {
-                cout << "   "<<plr1<<" THANG!!! " << endl;
+                cout << "   "<<"X"<<" THANG!!! " << endl;
                	a=' ',b=' ',c=' ',d=' ',e=' ',f=' ',g=' ',h=' ',i=' ';
             	cout<<"ban co muon choi lai : \nNhap so '1' de choi lai\nNhap so '0' de ket thuc\n";cin>>k;
 				if(k==1) 
 				{
 				nhap(); luatchoivahienthi();
 				}
-				else cout<<"ket thuc"<<endl; break; 
+				else cout<<"-------------------------------------KET THUC TRO CHOI-----------------------------------"<<endl; break; 
                 }
         else if ( a == 'O' && b == 'O' && c == 'O' || d == 'O' && e == 'O' && f == 'O' || g == 'O' && h == 'O' && i == 'O' ||
                 a == 'O' && d == 'O' && g == 'O' || b == 'O' && e == 'O' && h == 'O' || c == 'O' && f == 'O' && i == 'O' ||
                 a == 'O' && e == 'O' && i == 'O' || g == 'O' && e == 'O' && c == 'O' )   {
-                cout << "   "<<plr2<<" THANG!!! " << endl;
+                cout << "   "<<"O"<<" THANG!!! " << endl;
                 a=' ',b=' ',c=' ',d=' ',e=' ',f=' ',g=' ',h=' ',i=' ';
                 cout<<"ban co muon choi lai : \nNhap so '1' de choi lai\nNhap so '0' de ket thuc\n";cin>>k;
 				if(k==1) 
 				{
 				nhap(); luatchoivahienthi();
 				}
-				else cout<<"ket thuc"<<endl; break;
+				else cout<<"-------------------------------------KET THUC TRO CHOI-----------------------------------"<<endl; break;
                 }
         
     }
@@ -165,7 +165,7 @@ void luatchoivahienthi()
 				{
 				nhap(); luatchoivahienthi();
 				}
-				else cout<<"ket thuc"<<endl; 
+				else cout<<"-------------------------------------KET THUC TRO CHOI-----------------------------------"<<endl; 
 				}
     
 
