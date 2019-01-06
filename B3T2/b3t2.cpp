@@ -104,7 +104,7 @@ class bode{
 				string s;
 				cout<<"Chon cau tra loi : ";cin>>ctl;
 				getline(a , s) ; ds[i].cautraloi = atoi(s.c_str());
-				a.close();
+			//	a.close();
 				if(ctl==ds[i].cautraloi) 
 				{
 					dem++;
@@ -148,20 +148,24 @@ class bode{
 				{
 					dem++;
 				//	cout<<"ban tra loi dung "<<endl;
-				}//else cout<<"ban tra loi sai "<<endl;
-					
+				}//else cout<<"ban tra loi sai "<<endl;		
 			}
-			
 			}
+			system("cls");
+			cout<<"--------------------------DA TRA LOI XONG BO DE "<<k<<"------------------------------"<<endl;
 					
 		}
 		void luudiem()
 		{
+			system("cls");
 			l<<"so cau tra loi dung : "<<dem<<endl;
+			cout<<"---------------DA LUU DIEM------------------"<<endl;
 		}
 		void xemdiem()
 		{
-			cout<<"so diem nguoi choi dat duoc : "<<dem<<endl;
+			system("cls");
+				cout<<"-----Moi cau dung tuong ung voi 1 diem-----"<<endl;
+			cout<<"SO DIEM CUA NGUOI CHOI DAT DUOC : "<<dem<<endl;
 		}
 };
 
@@ -179,12 +183,17 @@ int main()
 	
 	while(w!=1)
 	{
-		if(w==0) break;
+		if(w==0)
+		{
+			system("cls");
+			cout<<"-------------------------------------BYE!!!-------------------------------------------"<<endl;break;
+		}
 		if(w==4) 
 		{
 			bd.xemdiem();
 			break;
 		}
+		system("cls");
 		cout<<"Chua chon bo de !!!"<<endl;
 		cout<<"Vui long chon lai so de chon cong viec thuc hien "<<endl;
 		cout<<"Chon 1. De chon bo de"<<endl;
@@ -196,24 +205,31 @@ int main()
 		
 	}
 	
-	while(w==1||w==2||w==3||w==4)
+	while(w==1||w==2||w==3||w==4||w==0)
 	{
 		if(w==1)
 		{
 			bd.nhapds();
-			cout<<"da chon bo de so : "<<k<<endl;
+			system("cls");
+			cout<<"DA CHON BO DE SO : "<<k<<endl;
 		}else
 		if(w==2)
 		{
+			system("cls");
 			bd.xuatds();
 		}else
 		if(w==3)
 		{
 			bd.luudiem();
-		}
+		}else
 		if(w==4)
 		{
 			bd.xemdiem();
+		}else
+		if(w==0)
+		{
+			system("cls");
+			cout<<"-------------------------------------BYE!!!-------------------------------------------"<<endl;break;
 		}
 		cout<<"Vui long chon so de chon cong viec thuc hien "<<endl;
 		cout<<"Chon 1. De chon bo de"<<endl;
