@@ -4,8 +4,8 @@
 #include<string.h>
 #include<fstream>
 using namespace std;
-ifstream f("inputb2n2.txt");
-//ofstream p("outputb2n1.txt");
+ifstream f("inputb2t1.dat" );
+ofstream g("inputb2t1.dat" , ios::app);
 //khoi tao nhan vien
 class nhanVien{
 	protected :
@@ -24,8 +24,27 @@ class nhanVien{
 
 class qLiNvien{
 	vector<nhanVien> dsNv;
+	nhanVien nv;
 	public:
-		//nhap danh sach nhan vien
+	
+		//nhap danh sach nhan vien tu file
+		void docDSnhanVientuFile()
+		{
+			int n ;
+			string s;
+			getline(f , s) ; n = atoi(s.c_str());
+			dsNv.resize(n);
+			n = dsNv.size();
+			for(int i=0;i<n;i++)
+			{
+				getline(f , s) ; dsNv[i].maNv = atoi(s.c_str());
+				getline(f , s) ; dsNv[i].hoten = s;
+				getline(f , s) ; dsNv[i].tuoi = atoi(s.c_str());
+				getline(f , s) ; dsNv[i].luong = atoi(s.c_str());
+			}
+			f.close();
+		}
+		//nhap lai danh sach nhan vien
 		void nhapDS()
 		{
 			int n,a,g;
@@ -49,41 +68,16 @@ class qLiNvien{
 					g=0;
 				}else g++;
 			}while(g<i);
+			
 			fflush(stdin);
 			cout<<"Nhap Ho va Ten : "; getline(cin,dsNv[i].hoten);
 			cout<<"Nhap Tuoi Nhan Vien : ";cin>>dsNv[i].tuoi;
 			cout<<"Nhap Luong Nhan Vien : ";cin>>dsNv[i].luong;
+			cout<<"--------------------------------------------------------------------------"<<endl;
 			}
 		}
-		//nhap danh sach nhan vien tu file
-		void nhapDstufile()
-		{
-			int n;
-			string s;
-			getline(f , s) ;  n = atoi(s.c_str()); 
-			dsNv.resize(n);
-			n=dsNv.size();
-			for(int i=0;i<n;i++)
-			{
-				getline(f , s) ; dsNv[i].maNv = atoi(s.c_str());
-				getline(f , s) ; dsNv[i].hoten = s;
-				getline(f , s) ; dsNv[i].tuoi = atoi(s.c_str());
-				getline(f , s) ; dsNv[i].luong = atoi(s.c_str());
-			}
-		}
-		void ghiDsvaofile()
-		{
-			int p;
-			p=fopen("outputb2n1.dat","rb");
-			p<<"Ma nhan vien"<<"\t"<<"Ho ten nhan vien"<<"\t"<<"Tuoi"<<"\t\t"<<"Luong"<<endl;
-			int n = dsNv.size();
-			for(int i=0;i<n;i++)
-			{
-				p<<dsNv[i].maNv<<"\t\t"<<dsNv[i].hoten<<"\t\t"<<dsNv[i].tuoi<<"\t\t"<<dsNv[i].luong<<endl;
-			}
-			p<<"------------------------------------------------------------------\n";
-		}
-		//them nhan vien
+		
+		//them x nhan vien		
 		void them()
 		{
 			int x,n,a,l,g=0,c;
@@ -186,93 +180,77 @@ class qLiNvien{
 			{
 				dsNv[i].InNv();
 			}
-			cout<<"----------------------------------------------------------------"<<endl;
+			
 		}
+		void ghiDSnhanViencvaoFile()
+		{
+			//xoa toan bo du lieu trong file va ghi lai tu dau
+			ofstream k("inputb2t1.dat");
+			int n;
+			n = dsNv.size();
+			k<<n<<endl;
+			for(int i=0;i<n;i++)
+			{
+				k<<dsNv[i].maNv<<endl;
+				k<<dsNv[i].hoten<<endl;
+				k<<dsNv[i].tuoi<<endl;
+				k<<dsNv[i].luong<<endl;	
+			}
+		}
+
 };
 
 
 int main()
 {
 	qLiNvien ql;
-	
 	int k;
-	ql.nhapDstufile();
-	ql.inDS();
-	cout<<"Vui long chon so de chon cong viec thuc hien "<<endl;
-	cout<<"Chon 1. De nhap lai du lieu nhan vien"<<endl;
-	cout<<"Chon 2. De them du lieu nhan vien"<<endl;
-	cout<<"Chon 3. De xoa du lieu nhan vien"<<endl;
-	cout<<"Chon 4. De cap nhat du lieu nhan vien"<<endl;
-	cout<<"Chon 5. De tim kiem nhan vien"<<endl;
-	cout<<"Chon 6. De in ra man hinh"<<endl;
-	cout<<"Chon 0. De ket thuc"<<endl;
-	cout<<"Nhap so : ";cin>>k;
+	ql.docDSnhanVientuFile();
+	cout<<endl;
+	cout<<"			 			1. Add Record"<<endl;
+	cout<<"			 			2. List Record"<<endl;
+	cout<<"			 			3. Modify Record"<<endl;
+	cout<<"			 			4. Delete Record"<<endl;
+	cout<<"			 			5. Exit"<<endl;
+	cout<<"			 			Your Choice : ";cin>>k;
 	
-	/*while(k!=1)
-	{
-		if(k==0)
-		{
-			break;
-		}
-		cout<<"chua co danh sach nhan vien !!!"<<endl;
-		cout<<"Vui long chon lai so de chon cong viec thuc hien "<<endl;
-		cout<<"Chon 1. De nhap du lieu nhan vien"<<endl;
-		cout<<"Chon 2. De them du lieu nhan vien"<<endl;
-		cout<<"Chon 3. De xoa du lieu nhan vien"<<endl;
-		cout<<"Chon 4. De cap nhat du lieu nhan vien"<<endl;
-		cout<<"Chon 5. De tim kiem nhan vien"<<endl;
-		cout<<"Chon 6. De in ra man hinh"<<endl;
-		cout<<"Chon 0. De ket thuc"<<endl;
-		cout<<"Nhap so : ";cin>>k;
-	}*/
-	
-	
-	while(k==1||k==2||k==3||k==4||k==5||k==6)
+	while(k==1||k==2||k==3||k==4)
 	{
 		if(k==1)
 		{
-			//int m;
-			//cout<<"ban muon lay danh sach tu dau ? \nNhap 1. de nhap tu ban phim \nNhap 2. de lay danh sach tu file\n"; cin>>m;
-			//if(m==1)
-			//	{
-				ql.nhapDS();	
-			//	} else 
-			//	{
-			//	ql.nhapDstufile();
-			//	}
+			ql.them();
+			ql.ghiDSnhanViencvaoFile();
+			system("cls");
 		}else
 		if(k==2)
 		{
-			ql.them();
-			ql.ghiDsvaofile();
+			system("cls");
+			ql.inDS();
 		}else
 		if(k==3)
 		{
-			ql.XoaNv();
-			ql.ghiDsvaofile();
+			ql.capNhat();
+			ql.ghiDSnhanViencvaoFile();
+			system("cls");
 		}else
 		if(k==4)
 		{
-			ql.capNhat();
-			ql.ghiDsvaofile();
+			ql.XoaNv();
+			ql.ghiDSnhanViencvaoFile();
+			system("cls");
 		}
-		if(k==5)
-		{
-			ql.timkiem();
-		}
-		if(k==6)
-		{
-			ql.inDS();
-		}
-	cout<<"Ban co muon tiep tuc tuc hien cong viec hay nhap so "<<endl;
-	cout<<"Chon 1. De nhap du lieu nhan vien"<<endl;
-	cout<<"Chon 2. De them du lieu nhan vien"<<endl;
-	cout<<"Chon 3. De xoa du lieu nhan vien"<<endl;
-	cout<<"Chon 4. De cap nhat du lieu nhan vien"<<endl;
-	cout<<"Chon 5. De tim kiem nhan vien"<<endl;
-	cout<<"Chon 6. De in ra man hinh"<<endl;
-	cout<<"Chon 0. De ket thuc"<<endl;
-	cout<<"Nhap so : ";cin>>k;
+		cout<<endl;
+		cout<<"						Another choice ?"<<endl;
+		cout<<endl;
+		cout<<"			 			1. Add Record"<<endl;
+		cout<<"			 			2. List Record"<<endl;
+		cout<<"			 			3. Modify Record"<<endl;
+		cout<<"			 			4. Delete Record"<<endl;
+		cout<<"			 			5. Exit"<<endl;
+		cout<<"			 			Your Choice : ";cin>>k;
 	}
+
+	
 	system("pause");
+	
 }
