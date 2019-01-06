@@ -12,6 +12,7 @@ void nhap()
     cout << "1.PLAY WITH X" << endl;
     cout << "2.PLAY WITH O" << endl;
     cout << "3.EXIT"<<endl;
+    cout<<"Enter your choice > ";
     cin>>a;
 	if(a==1)
 	{
@@ -73,7 +74,7 @@ void luatchoivahienthi()
            // cout << "			luot cua : "<<plr1 << endl;
             xo = 'X';
         }
-        cout << "			Your turn : " ;
+        cout << "			Your turn > " ;
         cin >> choice;
         switch (choice) {
                 case 1:
@@ -161,12 +162,11 @@ void luatchoivahienthi()
                 }
         
     }
-    			if(dem>=8)
+    			if(dem>=9)
     			{
        		 	a=' ',b=' ',c=' ',d=' ',e=' ',f=' ',g=' ',h=' ',i=' ';
     			cout << "Hoa !" << endl;
    				cout<<"ban co muon choi lai : \nNhap so '1' de choi lai\nNhap so '0' de ket thuc\n";cin>>k;
-   				system("cls");
 				if(k==1) 
 				{
 				nhap(); luatchoivahienthi();
