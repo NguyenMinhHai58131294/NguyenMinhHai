@@ -17,3 +17,6 @@ core i3
 core i1
 core i7
 core i5
+1
+2
+2
