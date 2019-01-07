@@ -7,10 +7,7 @@ using namespace std;
 ifstream t("b1.txt");
 ifstream g("b2.txt");
 ifstream f("b3.txt");
-ifstream m("tl1.txt");
-ifstream u("tl2.txt");
-ifstream a("tl3.txt");
-ofstream l("luu.txt");
+ofstream l("luu.txt",ios::app);
 int k;
 int dem=0;
 class de{
@@ -103,7 +100,7 @@ class bode{
 				int ctl;
 				string s;
 				cout<<"Chon cau tra loi : ";cin>>ctl;
-				getline(a , s) ; ds[i].cautraloi = atoi(s.c_str());
+				getline(f , s) ; ds[i].cautraloi = atoi(s.c_str());
 			//	a.close();
 				if(ctl==ds[i].cautraloi) 
 				{
@@ -111,6 +108,7 @@ class bode{
 				//	cout<<"ban tra loi dung "<<endl;
 				}//else cout<<"ban tra loi sai "<<endl;	
 			}
+			f.close();
 			//l<<"so cau tra loi dung : "<<dem<<endl;
 			}
 			if(k==2)
@@ -123,7 +121,7 @@ class bode{
 				int ctl;
 				string r;
 				cout<<"Chon cau tra loi : ";cin>>ctl;
-				getline(u , r) ; ds[i].cautraloi = atoi(r.c_str());
+				getline(g , r) ; ds[i].cautraloi = atoi(r.c_str());
 				if(ctl==ds[i].cautraloi) 
 				{
 					dem++;
@@ -131,6 +129,7 @@ class bode{
 				}//else cout<<"ban tra loi sai "<<endl;
 					
 			}
+			g.close();
 			//l<<"so cau tra loi dung : "<<dem<<endl;
 			}
 			if(k==1)
@@ -143,13 +142,14 @@ class bode{
 				int ctl;
 				string s;
 				cout<<"Chon cau tra loi : ";cin>>ctl;
-				getline(m , s) ; ds[i].cautraloi = atoi(s.c_str());
+				getline(t , s) ; ds[i].cautraloi = atoi(s.c_str());
 				if(ctl==ds[i].cautraloi) 
 				{
 					dem++;
 				//	cout<<"ban tra loi dung "<<endl;
 				}//else cout<<"ban tra loi sai "<<endl;		
 			}
+			t.close();
 			}
 			system("cls");
 			cout<<"--------------------------DA TRA LOI XONG BO DE "<<k<<"------------------------------"<<endl;
