@@ -205,7 +205,7 @@ int main()
 		
 	}
 	
-	while(w==1||w==2||w==3||w==4||w==0)
+	while(w==1||w==2||w==3||w==4)
 	{
 		if(w==1)
 		{
@@ -225,11 +225,6 @@ int main()
 		if(w==4)
 		{
 			bd.xemdiem();
-		}else
-		if(w==0)
-		{
-			system("cls");
-			cout<<"-------------------------------------BYE!!!-------------------------------------------"<<endl;break;
 		}
 		cout<<"Vui long chon so de chon cong viec thuc hien "<<endl;
 		cout<<"Chon 1. De chon bo de"<<endl;
@@ -239,6 +234,7 @@ int main()
 		cout<<"Chon 0. De ket thuc"<<endl;
 		cout<<"Nhap so : ";cin>>w;
 	}
-	
+	system("cls");
+	cout<<"-------------------------------------BYE!!!-------------------------------------------"<<endl;
 	system("pause");
 }
